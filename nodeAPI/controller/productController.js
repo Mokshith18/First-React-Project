@@ -43,7 +43,7 @@ const updateProduct =asyncHandler(async(req,res)=>{
         const product = await Product.findByIdAndUpdate(id, req.body,{new:true});
         if(!product){
             res.status(404);
-            throw new Error(`cannot find any product with id ${id}`);
+            throw new Error(`cannot find the product with id ${id}`);
             
         }
         //const updatedProduct = await Product.findById(id);
