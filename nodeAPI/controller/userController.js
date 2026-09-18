@@ -37,7 +37,7 @@ const updateUser = async(req,res)=>{
         const {id} = req.params;
         const user = await User.findByIdAndUpdate(id,req.body);
         if(!user){
-            return res.status(404).json({message:`cannot find any user with id ${id}`})
+            return res.status(404).json({message:`cannot find the user with id ${id}`})
         }
         const updatetedUser = await User.findById(id);
         res.status(200).json(updatetedUser)
